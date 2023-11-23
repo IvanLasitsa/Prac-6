@@ -1,11 +1,20 @@
 import math
 
-file = open('input.txt', 'r')
-x = float(file.read())
-n = 1 / (x**3 - math.e**1/x)
-m = n**3/2
-print(f"x = {x}\nn = {n}\nm = {m}")
-    
-f = open("output.txt", 'w')
-f.write(f"n = {n}\nm = {m}") 
+def data(file_path='input.txt'):
+    with open(file_path, 'r') as file:
+        x = float(file.read())
+        n = 1 / (x**3 - math.e**1/x)
+        m = n**3/2
+        print(x)
 
+    return x, n, m
+
+result = data()  
+
+result_str = f"x: {result[0]}\n n: {result[1]}\n m: {result[2]}"
+
+print(result_str)
+
+
+with open("output.txt", 'w') as f:
+    f.write(result_str)
