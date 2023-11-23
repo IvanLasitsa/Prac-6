@@ -5,7 +5,6 @@ def data(file_path='input.txt'):
         x = float(file.read())
         n = 1 / (x**3 - math.e**1/x)
         m = n**3/2
-        print(x)
 
     return x, n, m
 
